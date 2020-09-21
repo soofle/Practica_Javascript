@@ -1,0 +1,72 @@
+<html>
+
+<script>
+    window.onload = () => {
+
+        //Ejercicio 1
+        const boton = document.getElementById("boton");
+
+        boton.addEventListener("mousedown", clic => {
+            switch (clic.button){
+                case 0:
+                    alert("Boton izquierdo");
+                    break;
+                case 1:
+                    alert("Boton del medio");
+                    break;
+                case 2: 
+                    alert("Boton derecho");
+                    break;
+            }// clic.target.button daría un valor 
+        });
+
+        //Ejercicio 2
+        const input = document.getElementById("texto");
+
+        //uso en keydown porque quiero que me muestre a medida que ingreso las teclas, despues de cada ingreso
+
+        //KEYDOWN cuando aprieto sale el evento, KEYUP cuando levanto el dedo sale el evento
+        input.addEventListener("keydown", presionoTecla => {
+            alert(presionoTecla.key);
+            //presionoTecla.preventDefault()
+        } );
+
+        //si uso input me va a mostrar todo lo que esta en el contenido editable, no la tecla que voy presionando
+        input.addEventListener("input",  escribi => {
+            // CODIGO
+        });
+
+        // ACTIVIDAD NO COPIAR
+        const square = document.getElementById("square");
+
+        square.addEventListener("copy", ev => {
+
+            console.log("Ups, quiere copiar");
+            ev.preventDefault();
+        });
+
+        
+
+    }
+</script>
+
+<body>
+    <!--
+    <button id="boton">Hace click!</button>
+    <input type="text" name="texto" id="texto">
+
+    <div style="width:500px; height:500px; background: grey;"> 
+        <p id="square" >Lorem ipsum</p>
+    </div>
+    -->
+
+    <div id="uno" style="background: grey; border: solid; border-width: 7px; border-color: rgb(0, 0, 0); width:100px; height:100px;"></div>
+    <div id="dos" style=" background: grey; border: solid; border-width: 7px; border-color: rgb(0, 0, 0); width:100px; height:100px;"></div>
+    <div id="tres" style="background: grey; border: solid; border-width: 7px; border-color: rgb(0, 0, 0); width:100px; height:100px;"></div>
+    <div id="cuatro" style="background: grey; border: solid; border-width: 7px; border-color: rgb(0, 0, 0); width:100px; height:100px;"></div>
+    
+
+
+</body>
+
+</html>
